@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- Link to pure.css -->
+    <!-- Link to pure.css layout for a photo box-->
+    <!-- Link to pure.css layout for side-navigation-->
+    <link rel="stylesheet" href="../../node_modules/purecss/build/pure-min.css"/>
+    <link rel="stylesheet" href="../css/side-menu.css"/>
+    <!-- <link rel="stylesheet" href="../css/photo-gallery.css"/>
+     --><style type="text/css">
+      .pure-u-1-4 {
+        margin-right: 10px;
+      }
+
+      .pure-img-responsive {
+        position: relative;
+      }
+
+      .pure-menu-children {
+          left: 0;
+          top: 20px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          background: black !important;
+      }
+    </style>
+  </head>
+  <body>
+  <a href="#" id="menuLink"><span></span></a>
+    <div id="menu">
+      <div class="pure-menu">
+        <a class="pure-menu-heading">Navigation</a>
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" class="pure-menu-link">Canon</a>
+            <ul class="pure-menu-children">
+              <li class="pure-menu-item">
+                <a href="#" class="pure-menu-link">Canon EOS 20D</a>
+              </li>
+              <li class="pure-menu-item">
+                <a href="#" class="pure-menu-link">Canon EOS 400D DIGITAL</a>
+              </li>
+            </ul>
+          </li>
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link">Fujifilm</a></li>
+          <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" class="pure-menu-link">Leica</a>
+            <ul class="pure-menu-children">
+              <li class="pure-menu-item">
+                <a href="#" class="pure-menu-link">D-LUX 3</a>
+              </li>
+            </ul>
+          </li>
+          <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" id="menuLink1" class="pure-menu-link">Contact</a>
+            <ul class="pure-menu-children">
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Email</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Twitter</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tumblr Blog</a></li>
+            </ul>
+        </li>
+        </ul>
+        </div>
+      </div>
+      <div id="main">
+        <div class="header">
+          <h1>Home Page</h1>
+          <h2>Render your photo gallery in here</h2>
+        </div>
+        <div class="content">
+          <div class="content-subhead">Thumbnails</div>
+          <div class="pure-g">
+            <div class="pure-u-1-4">
+              <img class="pure-img-responsive" src="http://ih1.redbubble.net/work.31820.1.flat,550x550,075,f.jpg" alt="Peyto Lake">
+            </div>
+            <div class="pure-u-1-4">
+              <img class="pure-img-responsive" src="http://ih1.redbubble.net/work.2041.1.flat,550x550,075,f.jpg" alt="Peyto Lake">
+            </div>
+             <div class="pure-u-1-4">
+              <img class="pure-img-responsive" src="http://ih1.redbubble.net/work.240509.1.flat,550x550,075,f.jpg" alt="Peyto Lake">
+            </div>
+             <div class="pure-u-1-4">
+              <img class="pure-img-responsive" src="http://ih1.redbubble.net/work.26583.1.flat,550x550,075,f.jpg" alt="Peyto Lake">
+            </div>
+            <div class="pure-u-1-4">
+              <img class="pure-img-responsive" src="http://ih1.redbubble.net/work.26583.1.flat,550x550,075,f.jpg" alt="Peyto Lake">
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="../css/dropdown-menu.js"></script>
+  </body>
+</html>
