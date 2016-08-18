@@ -2,8 +2,6 @@ import chai from 'chai'
 import sinonChai from 'sinon-chai'
 import { jsdom } from 'jsdom'
 
-chai.use(sinonChai)
-
 var exposedProperties = ['window', 'navigator', 'document']
 
 global.document = jsdom()

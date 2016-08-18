@@ -1,9 +1,10 @@
+/*@flow*/
 export type WorkUrl = {
   'type':Size,
   '_@ttribute':string
 }
 
-export type Size = 'small|medium|large'
+export type Size = 'small'|'medium'|'large'
 
 export type Id = {
   urls:{
@@ -34,7 +35,7 @@ export type Work = {
 
 export type Make = {
   [make:string]:{
-    allModels:Array<String>,
+    allModels:Array<string>,
     byModel:Array<Model>
   }
 }
@@ -84,7 +85,7 @@ export type Thumbnail = {
   alt:string
 }
 
-type Gallery = {
+export type Gallery = {
   thumbnails:Array<Thumbnail>
 }
 
@@ -92,4 +93,17 @@ export type Page = {
   menu:Menu,
   gallery:Gallery,
   title:string
+}
+
+export type CliOptions = {
+  outputDir:string,
+  size:Size,
+  url:string
+}
+
+export type ProcessedInput = {
+  allMakes:Array<string>,
+  allIds:Array<string>,
+  byMake:ByMake,
+  firstTenIds:ById
 }

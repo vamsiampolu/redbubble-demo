@@ -19,11 +19,12 @@ function buildMenuItem(modelName:string):MenuItem {
 const buildMenuItems = map(buildMenuItem)
 
 export function buildMenuForMake(name:string,make:Make):Menu {
-  const {allModels}:{allModels:Array<string>} = make
-  return {
+  const {allModels} = make
+  const res = {
     menuItems: buildMenuItems(allModels),
     title:name
   }
+  return res
 }
 
 
@@ -50,6 +51,7 @@ export function buildPageFromMake(size:Size = 'medium',make:Make,name:string):Pa
     gallery:convertMakeToGallery(make,size),
     title:name
   }
+  console.log(res)
   return res
 }
 

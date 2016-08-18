@@ -10,14 +10,14 @@ import curry from 'lodash/fp/curry'
 import extractMakes,{getAllMakes} from './makes'
 import {extractByIdsForFirstTenWorks} from './ids'
 
-import type {Work,WorkUrl,Model,Make,Id} from '../types.js'
+import type {Work,WorkUrl,Model,Make,Id,ProcessedInput} from '../types.js'
 
 
 const getId = (work:Work):string => work.id
 const getAllIds = map(getId)
 
 
-export default function handleWorksResponse ({works:{work}} :{works:{work:Array<Work>}}):Object {
+export default function handleWorksResponse ({works:{work}} :{works:{work:Array<Work>}}):ProcessedInput {
   const allMakes:Array<string> = getAllMakes(work)
   const allIds:Array<string> = getAllIds(work)
   const byMake = extractMakes(work)

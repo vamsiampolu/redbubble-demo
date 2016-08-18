@@ -1,6 +1,6 @@
 // @flow
 
-import 'babel-polyfill'
+// import 'babel-polyfill'
 import fetch from 'isomorphic-fetch'
 import parser from 'xml2json-light'
 import co from 'co'
@@ -9,20 +9,23 @@ const corsBaseUrl = 'https://cors-anywhere.herokuapp.com/'
 
 function getWorksReq (url) {
   const worksReq = function * () {
-    const response = yield fetch(`${corsBaseUrl}${url}`)
-    let xml
+    const response = yield fetch(`${corsBaseUrl}${url}`,{
+      headers:{
+        'X-Requested-With':'co-fetch-commander'
+      }
+    })
     if (response != null && response.ok) {
-      xml = yield response.text()
+      let xml = yield response.text()
+      const json = parser.xml2json(xml)
+      return json
+    } else {
+      throw new Error(`could not fetch xml from ${url}`)
     }
-
-    const json = parser.xml2json(xml)
-    console.log(json)
-    return Promise.resolve(json)
   }
   return worksReq
 }
 
-function getWorks (url:string) {
+function getWorks (url:string):Promise<Object> {
   const ret = co(getWorksReq(url))
   return ret
 }

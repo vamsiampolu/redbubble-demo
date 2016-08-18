@@ -20,7 +20,7 @@ export const getMenuForModel = (name:string) => ({
 })
 
 const getConvertIdToThumbnail = curry(
-  ({model,size}:{model:Model,size:Size},id:Id) => ({
+  ({model,size='medium'}:{model:Model,size:Size},id:string) => ({
       alt:id,
       src:model.byId[id].urls[size]
     })
