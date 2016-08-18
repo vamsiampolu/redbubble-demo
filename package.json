@@ -5,11 +5,13 @@
   "main": "webpack.config.js",
   "dependencies": {
     "co": "4.6.0",
+    "co-prompt": "1.0.0",
     "es6-promisify": "4.1.0",
     "fs-promise": "0.5.0",
     "is-valid-path": "0.1.1",
     "isomorphic-fetch": "2.2.1",
     "lodash": "4.14.1",
+    "open": "0.0.5",
     "purecss": "0.6.0",
     "source-map-support": "0.4.2",
     "trash": "3.4.1",
@@ -26,10 +28,10 @@
     "babel-preset-es2015": "6.9.0",
     "babel-register": "6.9.0",
     "chai": "3.5.0",
+    "chokidar-cli": "1.2.0",
     "flow-bin": "0.28.0",
     "jsdom": "9.2.1",
     "mocha": "2.5.3",
-
     "standard": "7.1.2",
     "standard-loader": "4.0.0",
     "webpack": "1.13.1",
@@ -38,7 +40,10 @@
   "scripts": {
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "test": "NODE_PATH=src mocha --compilers js:babel-register --require ./util/helper.js 'src/**/*.spec.js*'",
-    "rebuild":"npm unlink && webpack && npm link"
+    "rebuild": "npm unlink && webpack && npm link",
+    "start:dev": "npm run rebuild && redbubble-demo -u http://take-home-test.herokuapp.com/api/v1/works.xml -s medium -o www",
+    "start:watch": "chokidar ./src/**/*.js -c 'npm run start:dev'",
+    "start": "redbubble-demo -u http://take-home-test.herokuapp.com/api/v1/works.xml -s medium -o www"
   },
   "bin": {
     "redbubble-demo": "./build/index.js"

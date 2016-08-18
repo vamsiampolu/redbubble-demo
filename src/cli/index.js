@@ -3,7 +3,6 @@ import program from 'commander'
 import path from 'path'
 
 export default function initializeCommander (defaults) {
-  console.log('inside initialize commander')
   program
     .version('0.0.1')
     .usage('redbubble-demo')

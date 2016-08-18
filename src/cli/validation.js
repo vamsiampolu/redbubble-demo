@@ -6,8 +6,6 @@ import type {Size} from '../types'
 import fs from 'fs'
 
 export function hasValidParentDirectory(pathStr:string):boolean {
-  console.log('has valid parent directory')
-  console.log(isValidPath,pathStr)
   if(isValidPath(pathStr)) {
 
     if(pathStr.includes(path.sep)) {

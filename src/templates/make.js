@@ -9,7 +9,6 @@ import curry from 'lodash/fp/curry'
 
 
 function buildMenuItem(modelName:string):MenuItem {
-  console.log(modelName)
   return {
     link:modelName,
     url:`./${modelName}.html`
@@ -29,7 +28,6 @@ export function buildMenuForMake(name:string,make:Make):Menu {
 
 
 const getPluckThumbnailFromModel = curry(({make,size = 'medium'}:{make:Make,size:Size},modelName:string):Array<Thumbnail> => {
-  console.log(modelName)
   const model = make.byModel[modelName]
   const { thumbnails } = convertModelToGallery(model,size)
   return thumbnails
@@ -51,7 +49,6 @@ export function buildPageFromMake(size:Size = 'medium',make:Make,name:string):Pa
     gallery:convertMakeToGallery(make,size),
     title:name
   }
-  console.log(res)
   return res
 }
 

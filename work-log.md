@@ -285,4 +285,14 @@ Also, the make page menu does not have the link to the model page. I have to fix
 
 FIX THE MENU --> MAKE IT A VERTICAL MENU WITH DROPDOWNS FOR ALL I CARE. The template will change in `page.js`. (Done successfully)
 
+Did something that I should have done at the starting of the app:
+
+
++ npm run rebuild : rebuilds the tool and makes it available as a `symlink` so that it can be run from the cli
+
+
++ npm run start:dev runs rebuild and starts the cli app with default arguments
+
++ npm run start: runs the cli app when it is available
+```
 ---
