@@ -39,9 +39,6 @@ const getGenerateMakeOutput = curry(
   function(parentDir:string,byMake:ByMake,makeName:string):Promise<any> {
     function * generateMakeOutput() {
       try {
-        console.log(`
-Generating output for make: ${makeName}
-`)
         const dirStatusPromise = createDirectoryForMake(parentDir,makeName)
         const dirMade = yield dirStatusPromise
         const status = yield Promise.all([

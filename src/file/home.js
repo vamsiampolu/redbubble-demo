@@ -17,11 +17,6 @@ export const buildMakeHomePage = (dirPath:string,byMake:ByMake,makeName:string):
   const filePath = path.join(dirPath,makeName,INDEX_FILE_NAME)
   const make = byMake[makeName]
   const homeStr = renderMake('medium', make, makeName)
-  console.log(`
-Creating the home page for each make
-To understand the process used to create a cli-client vist #
-To understand static-typing with Facebook flowtype visit #
-`)
   const res =  writeFile(filePath,homeStr)
   return res
 }

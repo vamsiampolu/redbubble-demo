@@ -11,9 +11,6 @@ const getGenerateModelPage =  curry(
     const modelStr = renderModel('medium',model,modelName)
     const fileName = `${modelName}.html`
     const filePath = path.join(outputPath,fileName)
-    console.log(`
-Creating ${modelName}.html inside the make directory
-`)
     return writeFile(filePath,modelStr)
   }
 )

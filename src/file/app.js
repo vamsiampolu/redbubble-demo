@@ -18,10 +18,6 @@ export const createRootDirectory = (dirPath:string):Promise<any> => mkdirp(dirPa
 function generateApp(options:CliOptions,input:ProcessedInput):Promise<any> {
   const {byMake,allMakes} : {byMake:ByMake,allMakes:Array<string>} = input
   const makeDirPath = path.join(options.outputDir,'makes')
-  console.log(`
-Creating the home page
-Take a look at a sample page here #
-`)
   const status = Promise.all([
     buildHomePage(options.outputDir, input),
     generateMakes(makeDirPath,{byMake,allMakes})
