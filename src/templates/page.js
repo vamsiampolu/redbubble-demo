@@ -92,6 +92,24 @@ const buildPage = (page:Page):string => {
                   display: block;
               }
           }
+
+          body {
+            background:#623045;
+            color:#fffefe;
+          }
+
+          .custom-wrapper {
+            background:#623045;
+          }
+
+          .pure-menu-heading {
+            color:#fffefe;
+          }
+
+          ul:not(.pure-menu-children) > .pure-menu-item > .pure-menu-link {
+            color:#fffefe;
+          }
+
       </style>
     </head>
     <body>
