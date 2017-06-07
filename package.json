@@ -22,6 +22,7 @@
   "devDependencies": {
     "babel": "6.5.2",
     "babel-core": "6.10.4",
+    "babel-eslint": "7.2.3",
     "babel-loader": "6.2.4",
     "babel-plugin-transform-flow-strip-types": "6.8.0",
     "babel-plugin-transform-object-rest-spread": "6.8.0",
@@ -30,9 +31,15 @@
     "babel-register": "6.9.0",
     "chai": "3.5.0",
     "chokidar-cli": "1.2.0",
+    "eslint-plugin-flowtype": "2.34.0",
     "flow-bin": "0.28.0",
+    "flow-typed": "2.1.2",
+    "husky": "0.13.4",
     "jsdom": "9.2.1",
+    "lint-staged": "3.6.0",
     "mocha": "2.5.3",
+    "prettier": "1.4.2",
+    "prettier-standard": "5.0.0",
     "standard": "7.1.2",
     "standard-loader": "4.0.0",
     "webpack": "1.13.1",
@@ -44,11 +51,25 @@
     "rebuild": "npm unlink && webpack && npm link",
     "start:dev": "npm run rebuild && redbubble-demo -u http://take-home-test.herokuapp.com/api/v1/works.xml -s medium -o www",
     "start:watch": "chokidar ./src/**/*.js -c 'npm run start:dev'",
-    "start": "redbubble-demo -u http://take-home-test.herokuapp.com/api/v1/works.xml -s medium -o www"
+    "start": "redbubble-demo -u http://take-home-test.herokuapp.com/api/v1/works.xml -s medium -o www",
+    "precommit": "lint-staged"
   },
   "bin": {
     "redbubble-demo": "./build/index.js"
   },
+  "lint-staged": {
+    "*.js": [
+      "standard",
+      "prettier-standard",
+      "git add"
+    ]
+  },
   "author": "vamsiampolu",
-  "license": "ISC"
+  "license": "ISC",
+  "standard": {
+    "parser": "babel-eslint",
+    "plugins": [
+      "flowtype"
+    ]
+  }
 }
